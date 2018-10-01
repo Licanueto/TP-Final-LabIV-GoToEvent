@@ -1,0 +1,22 @@
+<?php
+
+namespace DAO;
+final class SingletonDAO
+{
+
+    public static function getInstance()
+    {
+        static $inst = null;
+        if ($inst === null) {
+            $inst = new UserFactory();
+        }
+        return $inst;
+    }
+
+    private function __construct()
+    {
+
+    }
+}
+
+ ?>
