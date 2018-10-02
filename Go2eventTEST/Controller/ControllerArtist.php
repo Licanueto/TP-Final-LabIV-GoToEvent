@@ -20,9 +20,7 @@ class ControllerArtist
   function addArtist()
   {
     $artist = $_POST;
-    get
     print_r($artist);
-
   }
 
 }
