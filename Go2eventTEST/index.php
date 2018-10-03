@@ -26,4 +26,8 @@
 	Autoload::start();
 	session_start();
 	Router::direct(new Request());
+	
+
+
+
 ?>

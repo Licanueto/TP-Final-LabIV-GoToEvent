@@ -1,22 +1,19 @@
-<?php
+<?php namespace DAO;
 
-namespace DAO;
-final class SingletonDAO
+class SingletonDao
 {
+  private static $instance=array();
+	public static function getInstance()
+	{
 
-    public static function getInstance()
-    {
-        static $inst = null;
-        if ($inst === null) {
-            $inst = new UserFactory();
-        }
-        return $inst;
-    }
+		$miclase=get_called_class();
+		if(!isset(self::$instance[$miclase]))
+			{
+				self::$instance[$miclase]=new $miclase;
+			}
 
-    private function __construct()
-    {
 
-    }
+		return self::$instance[$miclase];
+	}
 }
-
- ?>
+?>

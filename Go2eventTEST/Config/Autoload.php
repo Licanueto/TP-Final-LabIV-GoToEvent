@@ -1,4 +1,5 @@
-<?php namespace Config;
+<?php
+namespace Config;
 
  class Autoload
 {
@@ -6,9 +7,11 @@
 	{
         spl_autoload_register(function($instance)
         {
-
+            //  print_r($instance.'<br>');
               $route=ROOT.str_replace("\\","/",$instance).".php";
               include_once($route);
+            //  print_r($route.'<br>');
+              //print_r($instance);
         });
      }
  }

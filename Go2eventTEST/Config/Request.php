@@ -7,7 +7,7 @@ class Request
 	private $controller;
 	private $method;
 	private $params;
-	 function __construct()
+	function __construct()
 	{
 		 /*  En el archivo htaccess se define una regla de reescritura para poder tomar la url tanto para todo method de petición.*/
             $url = filter_input(INPUT_GET, 'url', FILTER_SANITIZE_URL);

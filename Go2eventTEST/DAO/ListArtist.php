@@ -1,19 +1,29 @@
 <?php
 namespace DAO;
 
-class ListArtista extends SingletonDAO implements IDAO
+class ListArtist extends SingletonDAO implements IDAO
 {
 
   private $artist;
 
-  function __construct(argument)
+  function __construct()
   {
-    $this->array array();
+
+      $this->artist = array();
+
+
   }
 
   public function add($obj)
   {
-    arraypush($artist,$obj);
+    if(isset($_SESSION))
+    {
+      $arrayArtist = $_SESSION['artist'];
+    }
+    $arrayArtist[]= $obj;
+    $_SESSION['artist'] = $arrayArtist;
+
+    
   }
 
   public function retrieve($obj)
@@ -31,9 +41,9 @@ class ListArtista extends SingletonDAO implements IDAO
 
   }
 
-  public function getArtist()
+  public function getArtistList()
   {
-    return $this->artist;
+    return $_SESSION['artist'];
   }
 }
 

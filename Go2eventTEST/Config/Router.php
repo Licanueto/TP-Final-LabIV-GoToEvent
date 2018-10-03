@@ -20,6 +20,7 @@ namespace Config;
             $obj = "Controller\\". $controller;
             $controller = new $obj();
 
+
             if(!isset($params))
 
             {

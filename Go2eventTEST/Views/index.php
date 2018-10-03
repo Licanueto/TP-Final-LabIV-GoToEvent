@@ -1,7 +1,7 @@
 <form action="Artist/addArtist" method="post">
 
  First name:<br>
- <input type="text" name="nombre_artist"><br>
+ <input type="text" name="name_artist"><br>
  Last name:<br>
  <input type="text" name="desc">
 

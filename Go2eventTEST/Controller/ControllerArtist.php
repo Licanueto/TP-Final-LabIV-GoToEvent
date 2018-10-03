@@ -2,13 +2,16 @@
 namespace Controller;
 
 use Model\Artist as M_Artist;
-use DAO\Artist as D_Artist;
+use DAO\ListArtist as D_Artist;
 
 class ControllerArtist
 {
+  private $DAO_Artist;
 
   function __construct()
   {
+
+    $this->DAO_Artist = D_Artist::getInstance();
 
   }
 
@@ -17,10 +20,16 @@ class ControllerArtist
     include(ROOT.'Views/index.php');
   }
 
-  function addArtist()
+  function addArtist($name, $desc = '')
   {
-    $artist = $_POST;
-    print_r($artist);
+    $objArtist = new M_Artist($name, $desc);
+    $this->DAO_Artist->add($objArtist);
+    echo '<pre>';
+    var_dump($this->DAO_Artist->getArtistList());
+    echo '</pre>';
+    //print_r($this->DAO_Artist->getArtistList());
+
+
   }
 
 }

@@ -6,23 +6,23 @@ class Artist
   private $name;
   private $desc;
 
-  function __construct($name,$desc = '');
+  function __construct($name, $desc)
   {
     $this->name = $name;
     $this->desc = $desc;
   }
 
-  public getName()
+  public function getName()
   {
-    return $name;
+    return $this->name;
   }
 
-  public getDesc()
+  public function getDesc()
   {
-    return $desc;
+    return $this->desc;
   }
 
-  public setDesc($desc)
+  public function setDesc($desc)
   {
     $this->desc = $desc;
   }
